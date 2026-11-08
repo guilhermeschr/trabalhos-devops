@@ -60,7 +60,7 @@ jobs:
             -Dsonar.qualitygate.wait=true
             -Dsonar.qualitygate.timeout=600
       - name: Validar imagem sem publicar
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v7
         with:
           context: .
           file: services/products/Dockerfile
@@ -99,7 +99,7 @@ jobs:
       - name: Publicar imagem aprovada
         id: build
         if: steps.names.outputs.digest == ''
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v7
         with:
           context: .
           file: services/products/Dockerfile
