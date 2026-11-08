@@ -101,7 +101,7 @@ jobs:
           password: ${{ secrets.INVENTORY_DOCKERHUB_TOKEN }}
       - name: Imagem Spring
         id: app
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v7
         with:
           context: .
           file: services/inventory/Dockerfile
